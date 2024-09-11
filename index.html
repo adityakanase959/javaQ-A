@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>All About Java</title>
+</head>
+
+
+<body>
+
+
+    <section class="container" id="main-window">
+        <header>
+            <h1 class="typewriter">Java by <span id="span"> Shrikant Sir</span></h1>
+            <div class="line"></div>
+            <div class="groupBtn">
+                <!-- onclick="quizWindow() -->
+                <div id="quizBtn" class="btn" onclick="quizWindow()">Mock</div>
+                <div id="notesBtn" class="btn" onclick="notesWindow()">Notes</div>
+            </div>
+
+            <!-- <div><img src="img/loading.gif" height="200px" alt="Loading..."></div>lllllllllllllllllll -->
+        </header>
+
+    </section>
+
+
+    <section id="quiz-window" class="container">
+
+
+
+        <div id="questionDisplay" class="sub_container1">
+            <div id="quiz-back" class="backword" onclick="moveBack()"><img src="icon/arrow.png" alt=""></div>
+            <h1>JAVA Q&A</h1>
+
+            <div class="question-container">
+                <h2>Question:</h2>
+                <p id="question"></p>
+            </div>
+
+
+            <div class="answered">
+                <Button id="nextBtn" onclick="preQuestion()">Previous</Button>
+                <button id="prevBtn" onclick="nextQuestion()">Next</button>
+                <p>Did you answered? </p>
+                <button id="yes" class="buttons" onclick="addQuestion()">Yes</button>
+                <button id="no" class="buttons" onclick="addQuestion()">No</button>
+            </div>
+            <div class="display-rating">
+                <p>After answering <span data-num></span> /10 question you will get your rating</p>
+                <button id="resultBtn" onclick="resultWindow()">Get result</button>
+            </div>
+
+        </div>
+        <div id="question-list" class="sub_container1">
+            <p>Question No: <span data-questionNumber>1</span></p>
+            <div class="grid-container">
+
+                <button class="grid-item" onclick="gotoQuestion(1)">1</button>
+                <button class="grid-item" onclick="gotoQuestion(2)">2</button>
+                <button class="grid-item" onclick="gotoQuestion(3)">3</button>
+                <button class="grid-item" onclick="gotoQuestion(4)">4</button>
+                <button class="grid-item" onclick="gotoQuestion(5)">5</button>
+                <button class="grid-item" onclick="gotoQuestion(6)">6</button>
+                <button class="grid-item" onclick="gotoQuestion(7)">7</button>
+                <button class="grid-item" onclick="gotoQuestion(8)">8</button>
+                <button class="grid-item" onclick="gotoQuestion(9)">9</button>
+                <button class="grid-item" onclick="gotoQuestion(10)">10</button>
+                <button class="grid-item" onclick="gotoQuestion(11)">11</button>
+                <button class="grid-item" onclick="gotoQuestion(12)">12</button>
+                <button class="grid-item" onclick="gotoQuestion(13)">13</button>
+                <button class="grid-item" onclick="gotoQuestion(14)">14</button>
+                <button class="grid-item" onclick="gotoQuestion(15)">15</button>
+                <button class="grid-item" onclick="gotoQuestion(16)">16</button>
+                <button class="grid-item" onclick="gotoQuestion(17)">17</button>
+                <button class="grid-item" onclick="gotoQuestion(18)">18</button>
+                <button class="grid-item" onclick="gotoQuestion(19)">19</button>
+                <button class="grid-item" onclick="gotoQuestion(20)">20</button>
+                <button class="grid-item">21</button>
+                <button class="grid-item">22</button>
+                <button class="grid-item">23</button>
+                <button class="grid-item">24</button>
+                <button class="grid-item">25</button>
+                <button class="grid-item">26</button>
+                <button class="grid-item">27</button>
+                <button class="grid-item">28</button>
+                <button class="grid-item">29</button>
+                <button class="grid-item">30</button>
+                <button class="grid-item">31</button>
+                <button class="grid-item">32</button>
+                <button class="grid-item">33</button>
+                <button class="grid-item">34</button>
+                <button class="grid-item">35</button>
+                <button class="grid-item">36</button>
+                <button class="grid-item">37</button>
+                <button class="grid-item">38</button>
+                <button class="grid-item">39</button>
+                <button class="grid-item">40</button>
+                <button class="grid-item">41</button>
+                <button class="grid-item">42</button>
+                <button class="grid-item">43</button>
+                <button class="grid-item">44</button>
+                <button class="grid-item">44</button>
+                <button class="grid-item">45</button>
+                <button class="grid-item">46</button>
+                <button class="grid-item">47</button>
+                <button class="grid-item">48</button>
+                <button class="grid-item">49</button>
+                <button class="grid-item">50</button>
+                <button class="grid-item">51</button>
+                <button class="grid-item">52</button>
+                <button class="grid-item">53</button>
+                <button class="grid-item">54</button>
+                <button class="grid-item">55</button>
+                <button class="grid-item">56</button>
+                <button class="grid-item">57</button>
+                <button class="grid-item">58</button>
+                <button class="grid-item">59</button>
+                <button class="grid-item">60</button>
+
+            </div>
+        </div>
+
+
+    </section>
+    <section id="result-window" class="container">
+
+        <div id="h11">
+            <div class="backword" onclick="moveBack()"><img src="icon/arrow.png" alt=""></div>
+            <h1>Result</h1>
+        </div>
+        <div class="sub-container">
+            <div id="result-box-1" class="box">
+                <p>Direction (Rating):</p>
+                <ul>
+                    <li>* = Best</li>
+                    <li>1 = Good</li>
+                    <li>2 = Need improvement</li>
+                    <li>3 = Prepare well and come again</li>
+                </ul>
+            </div>
+            <div id="result-box-2" class="box">
+                <p id="wish" data-wish>Congratulations</p>
+                <img src="icon/firstRating.png" alt="" data-emoji>
+                <p id="rating"> You got rating: <span data-rating>1</span></p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="notes-window" class="container">
+        <div id="notes-back" class="backword" onclick="moveBack()"><img src="icon/arrow.png" alt=""></div>
+        <a href="https://drive.google.com/file/d/1BubXUI7sPnU3TUHdaiUrHXZkyfupaI9k/view?usp=sharing"
+            target="_blank">Click here for
+            Notes</a>
+        <div class="line"> </div>
+    </section>
+    <!-- <footer>Copyright <a href="https://www.linkedin.com/in/aditya-kanase-290a49225/">@Aditya Kanase</a></footer> -->
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

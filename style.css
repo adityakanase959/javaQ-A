@@ -1,0 +1,455 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --light-purple: rgb(216 180 254);
+  --dark-blue: rgb(17 24 39);
+  --purple-light: rgb(147 51 234);
+  --lime-purple: rgb(156 163 175);
+  --white-purple: rgb(229 231 235);
+  --after-hover: rgb(88 28 135);
+  --orange-line: rgb(231, 92, 92);
+  --light-green: rgb(102, 243, 102);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.container {
+  height: inherit;
+  width: inherit;
+  background-color: var(--dark-blue);
+  position: absolute;
+}
+
+/* main window styling */
+#main-window {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  /* background-color: wheat; */
+}
+
+#main-window h1 {
+  font-size: 7vmin;
+  margin-top: -10%;
+  /* padding: 5%; */
+  color: white;
+  width: 105%;
+}
+#span {
+  color: var(--purple-light);
+}
+.line {
+  height: 5px;
+  width: 100px;
+  /* margin-bottom: 20%; */
+  margin: 1% auto 20%;
+  background-color: rgb(231, 92, 92);
+}
+.typewriter {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.1em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em;
+  /* Adjust as needed */
+  animation: typing 1s steps(30, end), blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: rgb(249, 247, 242);
+  }
+}
+.groupBtn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  display: inline-block;
+  height: 15vmin;
+  width: 25vmin;
+  justify-content: center;
+  display: flex;
+  background-color: var(--purple-light);
+  border: 2px solid white;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 5vmin;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--after-hover);
+}
+
+/* quiz window styling */
+#quiz-window {
+  background-color: var(--dark-blue);
+  z-index: 0;
+  padding: 2vmin;
+  display: flex;
+}
+#questionDisplay {
+  width: 69%;
+  padding: 2vmin;
+  border: 1px solid white;
+  margin-right: 1%;
+  border-radius: 12px;
+}
+#questionDisplay h1 {
+  font-size: 5vmin;
+  text-align: center;
+  margin-bottom: 3vmin;
+}
+.question-container {
+  width: 100%;
+  height: 40%;
+  /* border: 1px solid white; */
+  padding: 2vmin;
+}
+
+.question-container h2 {
+  font-size: 3vmin;
+}
+#question {
+  height: 80%;
+  width: 100%;
+  margin-top: 2vmin;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  font-size: 4vmin;
+  padding: 3vmin;
+  padding-top: 4vmin;
+  align-items: center;
+  text-align: center;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* max-height: 80%; */
+  overflow-y: scroll;
+}
+
+.answered {
+  font-size: 4vmin;
+  text-align: center;
+}
+.answered p {
+  margin-top: 2vmin;
+}
+.answered button {
+  height: 7vmin;
+  width: 12vmin;
+  border-radius: 12px;
+  margin-top: 2vmin;
+  margin-left: 2vmin;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  font-size: 3vmin;
+
+  background-color: rgb(77, 192, 77);
+}
+.answered button:hover {
+  background-color: rgb(63, 160, 63);
+}
+#nextBtn {
+  background-color: var(--purple-light);
+  width: 15vmin;
+}
+#prevBtn {
+  background-color: var(--purple-light);
+  width: 15vmin;
+}
+#question-list {
+  width: 29%;
+  border: 1px solid white;
+  padding: 2vmin;
+  border-radius: 12px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 2vmin;
+  margin-top: 2vmin;
+  max-height: 93%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+}
+
+.grid-item {
+  background-color: var(--orange-line);
+  outline: none;
+  grid-template-columns: auto auto auto auto;
+  border: 1px solid wheat;
+  height: 8vmin;
+  width: 8vmin;
+  padding: 2vmin;
+  margin: 2vmin;
+  font-size: 3vmin;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+}
+.grid-item:hover {
+  background-color: var(--after-hover);
+  transform: scale(1.1);
+}
+.grid-item:focus {
+  background-color: var(--purple-light);
+}
+
+.display-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 15px; */
+  height: 20%;
+  font-size: 3vmin;
+}
+.display-rating p {
+  margin-bottom: 20px;
+}
+#resultBtn {
+  height: 7vmin;
+  width: 16vmin;
+  outline: none;
+  background-color: rgb(77, 192, 77);
+  color: white;
+  font-size: 3vmin;
+  border: 1px solid white;
+  border-radius: 20px;
+  visibility: hidden;
+}
+#resultBtn:hover {
+  box-shadow: 0px 0px 10px 0px gray;
+}
+/* this is used to apply responsiveness to the quiz window */
+
+@media only screen and (max-width: 1489px) {
+  .grid-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media only screen and (max-width: 1159px) {
+  .grid-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  #quiz-window {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #quiz-window {
+    flex-direction: column;
+    /* height: auto; */
+  }
+  #main-window {
+    height: 100vh;
+  }
+  .grid-container {
+    grid-template-columns: auto auto auto auto auto;
+  }
+  #questionDisplay {
+    width: 100%;
+  }
+  #question-list {
+    width: 100%;
+    margin-top: 5%;
+  }
+  #question {
+    height: 30vmin;
+  }
+  .display-rating {
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+}
+
+/* result window styling */
+#result-window {
+  background-color: var(--dark-blue);
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+}
+.backword {
+  padding: 10px;
+  position: absolute;
+  left: 4vmin;
+  border: 1px solid white;
+  display: grid;
+  align-items: center;
+  border-radius: 25%;
+  background-color: var(--purple-light);
+}
+
+.backword:hover {
+  background-color: var(--after-hover);
+}
+.backword img {
+  height: 5vmin;
+}
+
+#h11 {
+  height: 15%;
+  display: flex;
+  font-size: 6vmin;
+  color: var(--lime-purple);
+  justify-content: center;
+  align-items: center;
+}
+.sub-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70%;
+  padding: 2vmin;
+  margin-top: 3vmin;
+  justify-content: space-evenly;
+}
+img {
+  height: 30vmin;
+}
+.box {
+  padding: 2vmin;
+  border: 1px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+ul {
+  list-style-type: none;
+  margin-top: 4vmin;
+}
+li {
+  margin-left: 3vmin;
+  margin-bottom: 2vmin;
+  font-size: 3vmin;
+}
+
+#result-box-1 {
+  width: 30%;
+  padding: 4vmin;
+  box-shadow: 0px 0px 15px 0px var(--light-purple);
+  /* margin-right: 3vmin; */
+}
+
+#result-box-1 p {
+  font-size: 4vmin;
+  color: var(--orange-line);
+}
+
+#result-box-2 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 15px 0px var(--light-purple);
+}
+#wish {
+  font-size: 4vmin;
+  color: var(--orange-line);
+}
+
+#rating {
+  font-size: 4vmin;
+}
+#rating span {
+  font-size: 6vmin;
+}
+
+@media only screen and (max-width: 1050px) {
+  #result-window {
+    height: auto;
+  }
+  .sub-container {
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-evenly; */
+  }
+  #result-box-1 {
+    width: 60%;
+    /* margin-top: -30%; */
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  #result-box-2 {
+    width: 60%;
+  }
+  #h11 {
+    margin-top: 10%;
+  }
+}
+
+/* notes window styling */
+#notes-window {
+  color: white;
+  background-color: var(--dark-blue);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#notes-window a {
+  text-decoration: none;
+  color: white;
+  font-size: 6vmin;
+  margin-top: 15%;
+}
+#notes-window a:hover {
+  font-size: 7vmin;
+  color: var(--purple-light);
+}
+#notes-back {
+  position: absolute;
+  left: 4vmin;
+  top: 4vmin;
+}
+/* changing style of scrollbar */
+element::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
